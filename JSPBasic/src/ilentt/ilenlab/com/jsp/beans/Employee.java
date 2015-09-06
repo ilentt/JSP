@@ -7,6 +7,8 @@ public class Employee {
 	
 	public Employee() {
 		// constructor
+		this.EmpNo = "";
+		this.EmpName ="";
 	}
 	
 	public String getEmpNo() {
