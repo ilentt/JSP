@@ -15,16 +15,16 @@ public class Employee {
 		return this.EmpNo;
 	}
 	
-	public void setEmpNo(String EmpNo) {
-		this.EmpNo = EmpNo;
+	public void setEmpNo(String empNo) {
+		this.EmpNo = empNo;
 	}
 	
 	public String getEmpName() {
 		return this.EmpName;
 	}
 	
-	public void setEmpName(String EmpName) {
-		this.EmpName = EmpName;
+	public void setEmpName(String empName) {
+		this.EmpName = empName;
 	}
 }
 

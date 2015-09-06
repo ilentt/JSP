@@ -6,17 +6,17 @@
 	<!-- Create object Employee and set values for its field -->
 	
 	<jsp:useBean id="emp" class="ilentt.ilenlab.com.jsp.beans.Employee">
-		<jsp:setProperty name ="emp" property="EmpNo" value="E001"/>
-		<jsp:setProperty name ="emp" property="EmpName" value="Smith"/>
+		<jsp:setProperty name ="emp" property="empNo" value="E001"/>
+		<jsp:setProperty name ="emp" property="empName" value="Smith"/>
 	</jsp:useBean>
 	
 	<jsp:element name="employee">
-		<jsp:attribute name="EmpNo" trim="true">
-			<jsp:getProperty name="emp" property="EmpNo" />
+		<jsp:attribute name="empNo" trim="true">
+			<jsp:getProperty name="emp" property="empNo" />
 		</jsp:attribute>
 		
 		<jsp:body>
-			<jsp:getProperty name="emp" property="EmpName" />
+			<jsp:getProperty name="emp" property="empName" />
 		</jsp:body>
 	</jsp:element>
 	
