@@ -12,6 +12,6 @@
 		Cookies cookies = new Cookies();
 		cookies.userCookies(request, response, out);
 	%>
-	<a href="#">Try agian!!!</a>
+	<a href="#">Try again!!!</a>
 </body>
 </html>
