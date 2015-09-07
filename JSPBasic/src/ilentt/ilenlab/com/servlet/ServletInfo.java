@@ -60,7 +60,7 @@ public class ServletInfo extends HttpServlet {
 		out.println("<br/><span>getParameter text2: </span>");
 		out.println(param2);
 		
-		// Server Infos
+		// Server Infor
        out.println("<br/><br/><b>Server info:</b>");
  
        out.println("<br/><span>serverName:</span>");
