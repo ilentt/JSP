@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/other/info")
+@WebServlet("/url/info")
 public class ServletInfo extends HttpServlet {
 
 	/**
