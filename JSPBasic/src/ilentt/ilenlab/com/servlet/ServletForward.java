@@ -19,11 +19,16 @@ public class ServletForward extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = -1523914964243276862L;
+	
+	public ServletForward() {
+		// constructor
+	}
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String forward = request.getParameter("action");
-		if("true".equals(forward)) {
+		if("true".equalsIgnoreCase(forward)) {
 			System.out.println("Forward Servlet");
 			
 			// send data to other page
@@ -32,17 +37,20 @@ public class ServletForward extends HttpServlet {
 			//RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/showForward");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/showForward");
 			dispatcher.forward(request, response);
-			return;
+			//return;
 		}
 		ServletOutputStream out = response.getOutputStream();
+		
 		
 		out.println("<html>");
 		out.println("<head><title>Servler Forward</title></head>");
 		out.println("<body>");
-		out.println("<h3>Text of forward servlet: ");
-		out.println("- servlet Path = " + request.getServletPath());
+		out.println("<h3>Text of forward servlet: </h3>");
+		out.println("<p>- servlet Path = " + request.getServletPath() + "</p>");
 		out.println("</body>");
 		out.println("</html>");
+		
+		out.close();
 	}
 	
 	@Override
