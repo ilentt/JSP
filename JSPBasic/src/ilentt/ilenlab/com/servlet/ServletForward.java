@@ -35,7 +35,7 @@ public class ServletForward extends HttpServlet {
 			request.setAttribute(Constants.ATTRIBUTE_USER_NAME_KEY, 
 					"Hi, this's forward servlet page");
 			//RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/showForward");
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/showForward");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/forwardPage");
 			dispatcher.forward(request, response);
 			//return;
 		}
