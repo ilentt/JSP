@@ -18,7 +18,8 @@ public class ServletForward extends HttpServlet {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -1523914964243276862L;
+	//private static final long serialVersionUID = -1523914964243276862L;
+	private static final long serialVersionUID = 1L;
 	
 	public ServletForward() {
 		// constructor
@@ -32,15 +33,14 @@ public class ServletForward extends HttpServlet {
 			System.out.println("Forward Servlet");
 			
 			// send data to other page
-			request.setAttribute(Constants.ATTRIBUTE_USER_NAME_KEY, 
-					"Hi, this's forward servlet page");
+			request.setAttribute(Constants.ATTRIBUTE_USER_NAME_KEY, "Hi, this is forward servlet page");
 			//RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/showForward");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/forwardPage");
 			dispatcher.forward(request, response);
-			//return;
+			return;
 		}
-		ServletOutputStream out = response.getOutputStream();
 		
+		ServletOutputStream out = response.getOutputStream();
 		
 		out.println("<html>");
 		out.println("<head><title>Servler Forward</title></head>");
