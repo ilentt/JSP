@@ -24,7 +24,7 @@ public class Home extends HttpServlet {
 	// forward đến trang /WEB-INF/Views/home.jsp
 	// người dùng không bao giờ truy cập được trực tiếp vào các trang jsp đặt trong /WEB-INF/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/view/pages/home.jsp");
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/view/home.jsp");
 		dispatcher.forward(request, response);
 	}
 	
