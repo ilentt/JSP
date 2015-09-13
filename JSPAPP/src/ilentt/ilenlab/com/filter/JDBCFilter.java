@@ -42,7 +42,7 @@ public class JDBCFilter implements Filter{
 		 * không mở connect đến các request thông thường như image, css, javascript,...
 		 */
 		
-		if(needJDBC(req)) {
+		if(this.needJDBC(req)) {
 			System.out.println("Open connection for: " + req.getServletPath());
 			Connection conn = null;
 			try {
