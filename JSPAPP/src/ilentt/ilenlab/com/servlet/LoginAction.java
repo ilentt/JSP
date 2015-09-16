@@ -52,5 +52,10 @@ public class LoginAction extends HttpServlet {
 				errormsg = e.getMessage();
 			}
 		}
+		if(error) {
+			account = new Account();
+			account.setUsername(username);
+			account.setPassword(password);
+		}
 	}
 }
