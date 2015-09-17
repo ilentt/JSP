@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns = "{/userInfo}")
+@WebServlet(urlPatterns = {"/userInfo"})
 public class UserInfo extends HttpServlet {
 
 	/**
@@ -26,6 +26,7 @@ public class UserInfo extends HttpServlet {
 		super();
 	}
 	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		
@@ -36,11 +37,11 @@ public class UserInfo extends HttpServlet {
 			return;
 		}
 		
-		request.setAttribute("account", account);
+		//request.setAttribute("account", account);
 		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/userInfo.jsp");
 		dispatcher.forward(request, response);
 	}
-	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.doGet(request, response);
 	}
