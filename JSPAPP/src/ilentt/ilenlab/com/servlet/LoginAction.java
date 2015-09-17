@@ -8,10 +8,12 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class LoginAction extends HttpServlet {
 
@@ -56,6 +58,28 @@ public class LoginAction extends HttpServlet {
 			account = new Account();
 			account.setUsername(username);
 			account.setPassword(password);
+			
+			request.setAttribute("errormsg", errormsg);
+			request.setAttribute("username", username);
+			
+			RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("WEB-INF/views/login.jsp");
+			dispatcher.forward(request, response);
 		}
+		else {
+			HttpSession session = request.getSession();
+			MyUtils.storeLoginedUser(session, account);
+			
+			if(remember) {
+				MyUtils.storeUserCookie(response, account);
+			}
+			else {
+				MyUtils.deleteUserCookie(response);
+			}
+			response.sendRedirect(request.getContextPath() + "/userInfo");
+		}
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		this.doGet(request, response);
 	}
 }
