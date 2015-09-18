@@ -38,7 +38,7 @@ public class UserInfo extends HttpServlet {
 		}
 		
 		//request.setAttribute("account", account);
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/userInfo.jsp");
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/view/userInfo.jsp");
 		dispatcher.forward(request, response);
 	}
 	@Override

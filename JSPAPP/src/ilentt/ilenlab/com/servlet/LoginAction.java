@@ -65,7 +65,7 @@ public class LoginAction extends HttpServlet {
 			request.setAttribute("errormsg", errormsg);
 			request.setAttribute("username", username);
 			
-			RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("WEB-INF/views/login.jsp");
+			RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("WEB-INF/view/login.jsp");
 			dispatcher.forward(request, response);
 		}
 		else {
