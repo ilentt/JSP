@@ -28,7 +28,7 @@ public class ProductList extends HttpServlet {
 		// TODO Auto-generated constructor stub
 		super();
 	}
-
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Connection conn = MyUtils.getStoredConnection(request);
 		String errormsg = null;
@@ -46,7 +46,7 @@ public class ProductList extends HttpServlet {
 		RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/WEB-INF/views/product.jsp");
 		dispatcher.forward(request, response);
 	}
-	
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		this.doPost(request, response);
 	}
