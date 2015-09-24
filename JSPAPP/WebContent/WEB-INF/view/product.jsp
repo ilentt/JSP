@@ -21,6 +21,7 @@
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
+		<!--  unknow tag -->
 		<c:forEach item="${products}" var="p">
 			<tr>
 				<td>${p.code }</td>
