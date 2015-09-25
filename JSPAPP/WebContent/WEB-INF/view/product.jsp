@@ -9,7 +9,7 @@
 <body>
 	<jsp:include page="_header.jsp"></jsp:include>
 	<jsp:include page="_menu.jsp"></jsp:include>
-	
+	<!-- product list page -->
 	<h3>Product List</h3>
 	
 	<p style="color:red;">$errormsg</p>
