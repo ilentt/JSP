@@ -7,6 +7,7 @@
 <title>User info</title>
 </head>
 <body>
+<!-- user information -->
 	<jsp:include page="_header.jsp"></jsp:include>
 	<jsp:include page="_menu.jsp"></jsp:include>
 	<h3>Hello: ${account.username}</h3>
